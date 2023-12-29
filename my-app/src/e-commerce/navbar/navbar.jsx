@@ -8,8 +8,8 @@ export default function NavBar(){
             <Link to={"/"}>Coder</Link>
         </div>
         <ul>
-            <li><Link  to={"/category/item1"}>item1</Link></li>
-            <li><Link to={"/category/item2"}>item2</Link></li>
+            <li><Link  to={"/category/cafe"}>cafe</Link></li>
+            <li><Link to={"/category/salty"}>salty</Link></li>
         </ul>
     </nav>
     
