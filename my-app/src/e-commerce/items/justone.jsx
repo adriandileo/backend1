@@ -1,15 +1,15 @@
 import { getunitem } from "./item";
-import Contenedor from "./contenedor";
-import React, {UseState,UseEffect} from "react";
+import {Oneconteiner} from "./contenedor";
+import React, {useState,useEffect} from "react";
 import { useParams } from "react-router-dom";
 
 
 
-export default function JustItem(){
-    const [objeto , setObjeto] = UseState ([])
+export default function JustItem(props){
+    const [objeto , setObjeto] = useState ([])
     const {id} = useParams()
     
-      UseEffect(
+      useEffect(
         () => {
           getunitem(id)
           .then((objeto) => {
@@ -22,7 +22,7 @@ export default function JustItem(){
             <div>
                 <div className="orden">
     
-                <Contenedor
+                <Oneconteiner
                         
                         key={objeto.id}
                         id={objeto.id} 

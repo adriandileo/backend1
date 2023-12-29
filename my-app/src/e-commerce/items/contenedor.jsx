@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 //      CONTENEDOR
 
-export default function Contenedor(props){
+export function Contenedor(props){
 
 
     return(
@@ -16,10 +16,22 @@ export default function Contenedor(props){
             <p>{props.details}</p>
             <h4>{props.precio} </h4>
             <Link to={`/category/${props.category}/${props.id}`}>
-            </Link>
+            <button>{`Mas informacion ${props.title} `} </button>
+            </Link> 
             
         </div>
     </div>
     )
 
+}
+
+export function Oneconteiner(objeto){
+    return(
+        <div>
+            <h1>{objeto.name} </h1>
+            <p>{objeto.details} </p>
+            <h4>${objeto.precio} </h4>
+                    
+        </div>
+    )
 }

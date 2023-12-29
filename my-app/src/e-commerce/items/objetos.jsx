@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from "react";
 import { getitems,getCategory } from "./item";
-import Contenedor from "./contenedor";
+import {Contenedor} from "./contenedor";
 import { useParams } from "react-router-dom";
 
 
