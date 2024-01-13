@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Drupa",
+        "details": "Blend de granos provenientes de Colombia y Brasil con un tostado intermedio, con notas de chocolate y vainilla",
+        "precio": 300,
+        "category": "cafe",
+        "stock":3,
+        "min":1
+      },
+      {
+        "id": 2,
+        "name": "Fuego",
+        "details": "Grano porveninente de Etipia con un tostado claro, con fuertes notas de nuez",
+        "precio": 300,
+        "category": "cafe",
+        "stock":5,
+        "min":1
+      },
+      {
+        "id": 10,
+        "name": "Focaccia",
+        "details": "Pan de pizza relleno con queso, tomate y albahaca",
+        "precio": 300,
+        "category": "salty",
+        "stock":7,
+        "min":1
+      },
+      {
+        "id": 11,
+        "name": "Bagel",
+        "details": "Bagel de trigo o centeno, relleno con humus de garbanzos, rucula y queso rallado",
+        "precio": 300,
+        "category": "salty",
+        "stock":1,
+        "min":1
+      },
+      {
+        "id": 20,
+        "name": "Matilda",
+        "details": "Torta puramente de chocolate, con ganache de chocolate",
+        "precio": 300,
+        "category": "sweet",
+        "stock":2,
+        "min":1
+      },
+      {
+        "id": 21,
+        "name": "Selva Negra",
+        "details": "Torta de chocolate con crema y frutas",
+        "precio": 300,
+        "category": "sweet",
+        "stock":3,
+        "min":1
+      }
+]

@@ -1,23 +1,3 @@
-// import { initializeApp } from "firebase/app";
-// import {
-//     getFirestore,
-//     collection,
-//     doc,
-//     getDocs,
-//     getDoc,
-//     query,
-//     where,
-//     addDoc
-//   } from "firebase/firestore";
-// const firebaseConfig = {
-//   apiKey: "AIzaSyASJUm4ddo3iKANkG01Edyg7_Izez7QM80",
-//   authDomain: "backend-144ee.firebaseapp.com",
-//   projectId: "backend-144ee",
-//   storageBucket: "backend-144ee.appspot.com",
-//   messagingSenderId: "249709741012",
-//   appId: "1:249709741012:web:4c1091090fc06a88cdcc41"
-// };
-
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -90,56 +70,15 @@ async function getitems(){
 
   return dataItems;
 }
-
-// class itemCreator {
-//     constructor(){
-//         this.items=[]
-//     }
-//     seeItems = () =>{
-//         return this.items
-//     }
-//     agregarItems(
-//         title,
-//         category,
-//         description,
-//         price,
-//         thumbnail,
-//         code,
-//         stock
-//     ){
-//         const item = {
-//             title,category,description,price,thumbnail,code,stock:2
-//         }
-//         if(this.items.length===0){
-//             item.id = 1
-//         }else{
-//             item.id=this.items[this.items.length -1].id + 1;
-//         }
-//         this.items.push(item)
-//     }
-// }
-
-// function sendData(){
-//         let items = creadorDeItems.seeItems()
-//         let itemsCollectionRef = collection(db, "objetos")
-
-//         for(let item of items){
-//             delete(item.id)
-//             let newDoc = addDoc(itemsCollectionRef, item);
-//             console.log("Documento creado:",newDoc.id)
-//         }
-// }
-
-// const creadorDeItems= new itemCreator()
-// creadorDeItems.agregarItems("items1","a","info Item1",24,false)
-// creadorDeItems.agregarItems("items2","a","info Item2",24,false)
-// creadorDeItems.agregarItems("items3","b","info Item3",24,false)
+async function modificar(idParams){
+  const docRef = doc(db, "items", idParams);
+  const docResult = await getDoc(docRef);
+  if (docResult.exists()) {
     
+  // return { id: docResult.id, ...docResult.data() };
+ }
 
-
-// sendData()
-// console.log(creadorDeItems.seeItems())
-
+}
 
 async function sendData(){
   const items = [
@@ -198,15 +137,14 @@ async function sendData(){
               "min":1
             }
   ];
+ let itemsCollectionRef = collection(db, "items")  
+ for(let item of items){
+   delete(item.id)
+   let newDoc = await addDoc(itemsCollectionRef, item);
+   console.log("Documento creado:",newDoc.id)
+ }
 
-let itemsCollectionRef = collection(db, "items")  
-for(let item of items){
-  delete(item.id)
-  let newDoc = await addDoc(itemsCollectionRef, item);
-  console.log("Documento creado:",newDoc.id)
-}
 };
-
 
 export {getitems,
     getunitem, 
