@@ -42,14 +42,14 @@ async function getitems(){
   return dataItems;
 }
 ;
- async function getunitem(idParams){
+async function getunitem(idParams){
     const docRef = doc(db, "items", idParams);
     const docResult = await getDoc(docRef);
     if (docResult.exists()) {
     return { id: docResult.id, ...docResult.data() };
    }
 
- }
+}
 
  async function getCategory(CategoryParams){
   const collectionRef = collection(db, "items");
